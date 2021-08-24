@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Contact Center AI | Observe.AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link class="title-logo-class"rel = "icon" href = "title-logo.png" type = "image/x-icon">
+  <style media="screen">
+  .body {
+      background-color: #1d2327;
+      font-family:sans-serif;
+      color: #1a1a1a;
+      font-size: 90%;
+      margin: 0px;
+      line-height: auto;
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden;
+  }
+  body {
+      margin: 0px;
+      background-color: #1a1a1a;
+      font-family: sans-serif;
+      color: #fff;
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: 400;
+      height:100%;
+      width: auto;
+  }
+  body {
+      display: block;
+      margin: 8px;
+  }
+  .header-bar{
+      display: block;
+      width: 98.6%;
+      padding: 10px 10px 10px 10px;
+      height: 100%;
+      background-color: #fcbd2f;
+      font-size: 16px;
+      line-height: 28px;
+      text-decoration: none;
+      text-align: center;
+
+  }
+  a.header{
+      display: inline;
+      color: #1a1a1a;
+      text-decoration: none;
+  }
+  .navigation-bar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      width: 1528px;
+      align-items: center;
+      background-color: #000;
+      height:65px;
+      height: 100%;
+      width: 100%;
+  }
+  .logo{
+    padding-left: 100px;
+  }
+  ul#menu1 li{
+    display: inline;
+  }
+  a.prod{
+    padding-left: 300px;
+  }
+  a.prod, a.cust, a.comp, a.res{
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 30px;
+  }
+  .li{
+    color: #ffffff;
+  }
+  .demo {
+    background-color: #fcbd2f;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-style: normal;
+    margin-left: 150px;
+    border-radius: 10px;
+  }
+  .demo:hover{
+    background-color: black;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  .section {
+      position: static;
+      margin-right: 0;
+      margin-left: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #1a1a1a;
+
+  }
+  .image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64%;
+  }
+  .preview{
+    background-color: #fcbd2f;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-style: normal;
+    margin-left: 150px;
+  }
+  .h1{
+    padding: 100px 10px 30px 10px;
+    width: auto;
+    margin: 40px auto;
+    font-family: "Playfair Display", sans-serif;
+    color: #fff;
+    font-style:normal;
+    font-size: 46px;
+    line-height: 60px;
+    font-weight: 800;
+    text-align: center;
+  }
+  .h2{
+    font-family: 'IBM Plex Sans',sans-serif;
+    width: auto;
+    color: #fff;
+    text-align:center;
+    weight:400;
+    font-size: 18px;
+    padding-bottom: 50px;
+    line-height: 40px;
+  }
+  .preview {
+    position: absolute;
+    top: -280px;
+    left: 30%;
+    background-color: #fcbd2f;
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+  }
+  .preview:hover {
+    background-color: black;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  .container {
+      position: relative;
+      display: flex;
+      height: auto;
+      max-width: 1140px;
+      margin-right: auto;
+      margin-left: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      flex: 0 auto;
+      text-align: left;
+      color: #fff;
+  }
+  .after_pic {
+      position: static;
+      padding-top: 30px;
+      padding-bottom: 60px;
+      background-color: #1a1a1a;
+  }
+  .resul{
+      display: block;
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 53px;
+      weight:900;
+      text-align: center;
+  }
+  .num{
+      position: static;
+      padding-top: 0;
+      float: left;
+      font-family: 'Playfair Display',sans-serif;
+      color: #fabc2d;
+      font-size: 80px;
+      line-height: 125%;
+      font-weight: 700;
+      text-align: left;
+  }
+  .rate{
+      position: relative;
+      bottom: -31px;
+      display: inline;
+      margin-left: 4px;
+      float: left;
+      clear: none;
+      justify-content: flex-start;
+      font-family: 'Playfair Display',sans-serif;
+      color: #fabc2d;
+      font-size: 49px;
+      line-height: 125%;
+      font-weight: 900;
+      text-align: left;
+  }
+  .text{
+      display: block;
+      width: auto;
+      margin-top: 10px;
+      padding-top: 0;
+      padding-right: 0;
+      float: left;
+      clear: both;
+      align-self: center;
+      order: 0;
+      flex: 1;
+      color: #f5f5f5;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: left;
+      text-transform: uppercase;
+  }
+  .first .text{
+    padding-left: 50px;
+  }
+  .second .text{
+    padding-left: 400px;
+  }
+  .third .text{
+    padding-left: 850px;
+  }
+  .trusted{
+      position: relative;
+      overflow: hidden;
+      margin-top: 100px;
+      margin-right: 0;
+      margin-left: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+  }
+  .line-5{
+    position: relative;
+    top: 25px;
+    left: -330px;
+  }
+  .trusted-heading {
+      margin-top: 100px;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 42px;
+      font-family: "Playfair Display", sans-serif;
+  }
+  .logo-1{
+    padding-left:  970px;
+    position:relative;
+    bottom: 35px;
+  }
+  .logo-2{
+    padding-top: -100px;
+    padding-left: 820px;
+  }
+  .logo-3{
+     position:relative;
+     bottom: 180px;
+  }
+  .logo-4{
+    position:relative;
+    bottom: 60px;
+    right: 80px;
+  }
+  .logo-5{
+    position: relative;
+    right: 10px;
+  }
+  .recognised-by {
+      position: relative;
+      left: 10px;
+      padding-top: 80px;
+      background-color: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      width: auto;
+  }
+  .awards-section {
+      display: flex;
+      margin-top: 120px;
+  }
+  .recog{
+    font-size: 42px;
+  }
+  .forbes{
+    position: relative;
+    padding-left: 330px;
+    top: 100px;
+  }
+  .forbes-text{
+    position: relative;
+    padding-top: 150px;
+    right:180px;
+  }
+  .the-info{
+    position: relative;
+    bottom: 20px;
+    right: 10px;
+  }
+  .the-info-text{
+    position: relative;
+    top: 30px;
+    right: 250px;
+  }
+  .gartner{
+    position: relative;
+    right:80px;
+    top: 100px;
+  }
+  .gartner-text{
+    position: relative;
+    padding-top: 150px;
+    right:250px;
+  }
+  .bg-white{
+    background-color: #fff;
+  }
+  .analyse{
+      position: relative;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      color: black;
+      width: auto;
+      height: 100%;
+  }
+  .analyse-every{
+    font-size: 42px;
+    line-height: normal;
+    position: relative;
+    padding-left: 250px;
+    top: 50px;
+    font-family: "Playfair Display", sans-serif;
+  }
+  .monitor{
+    position: relative;
+    padding-left: 250px;
+    font-size: 18px;
+    weight:400;
+    line-height: 23px;
+    top: 50px;
+  }
+  .explore{
+    position: relative;
+    left: 250px;
+    top: 30px;
+    text-decoration: none;
+    font-size: 21px;
+  }
+  .explore:hover{
+    color:#fcbd2f;
+  }
+  .vids{
+    position: relative;
+    left: 750px;
+    width:600px;
+    top: -320px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  .line-2{
+    position: relative;
+    top: -230px;
+  }
+  .evaluate-text{
+    font-family:"Playfair Display", sans-serif;
+    font-size: 50px;
+    line-height: 53px;
+    color: #1a1a1a;
+    padding-left: 200px;
+    position: relative;
+    top: -225px;
+    left: 50px;
+  }
+  .spend-text-1{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 26px;
+    line-height: 24px;
+    weight:400;
+    position: relative;
+    padding-left: 200px;
+    top: -225px;
+  }
+  .spend-text-2{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    weight:400;
+    position: relative;
+    padding-left: 290px;
+    top: -225px;
+  }
+  .spend-text-3{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    weight:400;
+    position: relative;
+    padding-left: 550px;
+    top: -225px;
+  }
+  .agent-text{
+    position: relative;
+    left: 525px;
+    top: -225px;
+    font-size: 30px;
+    text-decoration: none;
+  }
+  .agent-text:hover{
+    color:#fcbd2f;
+  }
+  .coach-text{
+    font-family: "Playfair Display", sans-serif;
+    font-size: 42px;
+    line-height: 53px;
+    weight:900;
+    position: relative;
+    left: 150px;
+    top: -50px;
+  }
+  .line{
+    position: relative;
+    top:-75px;
+    left: -450px;
+  }
+  .show-text{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    weight:400;
+    position: relative;
+    left: 150px;
+    top:-50px;
+  }
+  .explore-agent-text{
+    position: relative;
+    top: -60px;
+    left: 150px;
+    font-size: 22px;
+    text-decoration: none;
+
+  }
+  .explore-agent-text:hover{
+    color:#fcbd2f;
+  }
+  .contextual{
+    position: relative;
+    top: -450px;
+    left: 750px;
+  }
+  .meet-text{
+    font-family: "Playfair Display", sans-serif;
+    font-size: 42px;
+    line-height: 53px;
+    weight:900;
+    color:#fff;
+    position: relative;
+    left: 450px;
+  }
+  .helps{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    weight:400;
+    color: #fff;
+    position: relative;
+    left: 420px;
+  }
+  .coach-agent{
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+    weight:400;
+    color: #fff;
+    position: relative;
+    left: 555px;
+  }
+  .line-1{
+    position: relative;
+    top: -10px;
+    left: 10px;
+  }
+  .img1{
+    border-radius: 50%;
+    height: 120px;
+    position: relative;
+    left: 80px;
+    top: -200px;
+  }
+  .img-1-name{
+    position: relative;
+    left: 110px;
+    top: -200px;
+    color: #fff;
+  }
+  .img-1-desc{
+    color: #fff;
+    position: relative;
+    left: 70px;
+    top: -210px;
+  }
+  .img2{
+    border-radius: 50%;
+    height: 120px;
+    position: relative;
+    left: 180px;
+    top: -180px;
+  }
+  .img-2-name{
+    position: relative;
+    left: 220px;
+    top: -180px;
+    color: #fff;
+  }
+  .img-2-desc{
+    color: #fff;
+    position: relative;
+    left: 180px;
+    top: -190px;
+  }
+  .img3{
+    border-radius: 50%;
+    height: 120px;
+    position: relative;
+    left: 525px;
+    top: -260px;
+  }
+  .img-3-name{
+    position: relative;
+    left: 565px;
+    top: -260px;
+    color: #fff;
+  }
+  .img-3-desc{
+    color: #fff;
+    position: relative;
+    left: 525px;
+    top: -270px;
+  }
+  .img4{
+    border-radius: 50%;
+    height: 120px;
+    position: relative;
+    left: 875px;
+    top: -495px;
+  }
+  .img-4-name{
+    position: relative;
+    left: 900px;
+    top: -495px;
+    color: #fff;
+  }
+  .img-4-desc{
+    color: #fff;
+    position: relative;
+    left: 875px;
+    top: -505px;
+  }
+  .img5{
+    border-radius: 50%;
+    height: 120px;
+    position: relative;
+    left: 1200px;
+    top: -850px;
+  }
+  .img-5-name{
+    position: relative;
+    left: 1240px;
+    top: -850px;
+    color: #fff;
+  }
+  .img-5-desc{
+    color: #fff;
+    position: relative;
+    left: 1180px;
+    top: -860px;
+  }
+  .img6{
+    border-radius: 50%;
+    height: 120px;
+    position: relative;
+    left: 1300px;
+    top: -1333px;
+  }
+  .img-6-name{
+    position: relative;
+    left: 1340px;
+    top: -1333px;
+    color: #fff;
+  }
+  .img-6-desc{
+    color: #fff;
+    position: relative;
+    left: 1300px;
+    top: -1343px;
+  }
+  .vids-1{
+    position: relative;
+    top: -150px;
+    left: 275px;
+    padding: 30px 0px 30px 0px;
+    height: auto;
+    width: auto;
+  }
+  .vids-2{
+    position: relative;
+    width: 100%;
+    top: -772px;
+  }
+  .trusted-by-text{
+    position: relative;
+    top: -650px;
+    left: 500px;
+    color: #fff;
+    font-size: 48px;
+    font-family: "Playfair Display", sans-serif;
+    line-height: 53px;
+    weight:900;
+  }
+  .line-4{
+    background-color: #fff;
+  }
+  .line-6{
+    background-color: #fff;
+    color: #fff;
+    position: relative;
+    top: -625px;
+    left: 33px;
+  }
+  .first-line{
+    position: relative;
+    top: -550px;
+    left: 150px;
+  }
+  .pic-1,.pic-2,.pic-3,.pic-4,.pic-5,.pic-6,.pic-7,.pic-8,.pic-9,.pic-10,.pic-11,.pic-12{
+    width: 20%;
+    height: 20%;
+  }
+  .second-line{
+    position: relative;
+    top: -475px;
+    display: flex;
+    justify-content: center;
+  }
+  .third-line{
+    position: relative;
+    top: -375px;
+    left: 150px;
+  }
+  .enable-text{
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    color: #fff;
+  }
+  .enable{
+    position: relative;
+    left: 225px;
+    top:-250px;
+  }
+  .demo-1{
+    background-color: #fcbd2f;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size:30px;
+    cursor: pointer;
+    font-style: normal;
+    margin-left: 150px;
+    border-radius: 10px;
+    width: 225px;
+    height: 60px;
+    position: relative;
+    top: -175px;
+    left: 475px;
+  }
+  .demo-1:hover{
+    background-color: black;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  .line-7{
+    position: relative;
+    top: -225px;
+    background-color: #fff;
+  }
+  .disclaimer{
+    display: none;
+  }
+  .desk{
+    display:none;
+  }
+  @media screen and (max-width: 600px)
+  {
+    body{
+      display: none;
+    }
+    .disclaimer{
+      color: #fff;
+      background-color: #fcbd2f;
+    }
+    .desk{
+      color:#fff;
+      background-color: #fcdb2f;
+    }
+  }
+
+  </style>
+</head>
+  <body class="body">
+    <div class="header-bar">
+      <a class="header" href="">
+          <strong>**Check out Observe.AI right now **Self-service Demo ➜<br>
+          </strong>
+        </a>
+      </div>
+      <div class="navigation-bar">
+          <a href=""><img class="logo" src="logo.png" width="220" height="56" alt="logo"></a>
+          <ul id="menu1">
+            <li><a class="prod" href="">PRODUCT    &#8744;</a>  </li>
+            <li><a class="cust" href="">CUSTOMERS    &#8744;</a>   </li>
+            <li><a class="res" href="">RESOURCES     &#8744;</a>   </li>
+            <li><a class="comp" href="">COMPANY    &#8744;</a>   </li>
+          </ul>
+          <button class="demo" type="button">GET A DEMO</button>
+      </div>
+      <div class="section">
+          <h1 class="h1">Level-Up Your Agents with <br>Contact Center AI</h1>
+          <h2 class="h2">Everything you need to analyze interactions, evaluate <br>performance, and coach hard-working teams in one place.</h2>
+            <img class="image" src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f36d4f09a7823af4994beb8_homepage-hero-image.png" width="997" alt="" class="homepage-image">
+      </div>
+      <div class="container">
+        <a class="preview" href="">SEE A PREVIEW</a>
+      </div>
+      <div class="after_pic">
+        <div class="container">
+          <div class="section-heading-wrap">
+            <h2 class="resul">Results You'll Love<br></h2>
+              <div class="first">
+                <div class="text">Increase in Bookings  ></div>
+                <div class="num">4</div>
+                <div class="rate">X</div>
+              </div>
+              <div class="second">
+                <div class="text">increase in conversion rate  ></div>
+                <div class="num">40</div>
+                <div class="rate">%</div>
+              </div>
+              <div class="third">
+                <div class="text">increase in CSAT  ></div>
+                <div class="num">5</div>
+                <div class="rate">%</div>
+            </div>
+          </div>
+        </div>
+      <div class="trusted">
+        <div class="container">
+            <h2 class="trusted-heading">Trusted By</h2>
+            <hr class="line-3" size="3px" width="400px" color="white">
+            <div class="logos-sidebyside">
+              <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5d5c861cd21dd86d78137c21_erc-bpo-logo.png" width="180" alt="" class="logo-1">
+              <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5e7c519bf7fc3ce04360bd54_NDR%20logo%404x.png" width="200" alt="" class="logo-2">
+              <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/606dc5c7c6052ea6a282399f_23ANDME%20LOGO%20WHITE%403x.png" width="200" alt="" class="logo-3">
+              <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5df3542337f19336fefe5346_root-logo%404x.png" width="200"  alt="" class="logo-4">
+              <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5d5c861b6b05e5f3dafe9b7a_cnx-logo.png" width="200" alt="" class="logo-5">
+              <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/606dc5c77622a7a45ec1b6bb_2U%20LOGO%20WHITE%20%403x.png" width="200" alt="" class="logo-6">
+            </div>
+        </div>
+      </div>
+      <div class="recognised-by">
+          <div class="section-heading-wrap">
+            <h2 class="recog">Recognized By</h2>
+            <hr class="line-4" size="5px" width="400px" colour="white">
+            <div class="awards-section">
+                <div class="forbes">
+                  <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/609533f24aebaab4c850fb65_Forbes%20logo.svg" loading="lazy" alt="">
+                </div>
+                <div class="forbes-text">AI 50: America’s Most Promising <br>Artificial Intelligence Companies in 2020 &amp; 2021
+                </div>
+                <div class="the-info">
+                  <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/609533bc2369ea8333fdbacc_The%20Information%20logo.svg" loading="lazy" alt="">
+                </div>
+                <div class="the-info-text">The Information 50’s Most Promising Startups in 2020
+                </div>
+                <div class="gartner">
+                  <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/609533bc00a8525768121cd8_Gartner%20logo.svg" loading="lazy" alt="">
+                </div>
+                <div class="gartner-text">Top 25 Enterprise Software Startups To Watch In 2020
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="bg-white">
+      <div class="analyse">
+        <h2 class="analyse-every">Analyze Every <br>Call &amp; Interaction</h2>
+        <hr class="line-5" size="5px" width="350" color="black">
+        <p class="monitor">Monitor a 30 minute interaction in just a few<br>
+                           minutes. Automatically surface the most important<br>
+                           interactions to improve, such as compliance gaps,<br>
+                           coaching opportunities, and displays of strong <br>
+                           customer sentiment.<br><br>
+        </p>
+        <a href="" class="explore">Explore Interaction&nbsp;Analytics ➜</a><br>
+        <video class="vids" autoplay loop muted>
+          <source src="vid.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="evaluate">
+        <h2 class="evaluate-text">Evaluate More Interactions in Half the Time</h2>
+        <hr class="line-2" size="5px" width="750px" color="black">
+        <div class="spend">
+          <p class="spend-text-1">Spend less time scoring interactions and more time delivering engaging, data-driven feedback to </p>
+          <p class="spend-text-2">agents. Review and score conversations in one view. Access a tagged and timestamped transcript </p>
+          <p class="spend-text-3">to get a quick pulse of the interaction.<br><br></p>
+        </div>
+        <div class="agent">
+          <a href="" class="agent-text">Explore Agent QA&nbsp;Evaluations➜</a>
+        </div>
+      </div>
+      <video class="vids-1" autoplay loop muted>
+        <source src="vid-1.mp4" type="video/mp4">
+      </video>
+      <div class="coach">
+        <h2 class="coach-text">Coach &amp;<br>Motivate Agents</h2>
+      </div>
+      <hr class="line" size="5px" width="350px" color="black">
+      <div class="show">
+        <p class="show-text">Show agents how to improve by leaving <br>
+                             personalized coaching tips right within the <br>
+                             transcript. Boost transparency and morale by using <br>
+                             data to help the agents who need it most quickly.<br><br>
+      </div>
+      <div class="explore-agent">
+        <a href="" class="explore-agent-text">Explore Agent Performance &amp;&nbsp;Coaching➜</a>
+      </div>
+      <br>
+      <div class="contextual">
+        <img src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f1b4b8fbf65787041d93cbe_coaching-feature.png" alt="image of " width="610">
+      </div>
+    </div>
+    <div class="meet">
+      <h2 class="meet-text">Meet our Coaching &amp; AI Experts</h2>
+    </div>
+    <hr class="line-1" size="5px" width="550px" color="white">
+    <div class="helps">
+      <p>Observe.AI helps you know what's happening on 100% of conversations. <br></p>
+    </div>
+    <div class="coach-agent">
+      <p>Coach agents on how to improve CX quality</p>
+    </div>
+    <div class="img-1">
+      <img class="img1" src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/60349c6860ea27d4d4513ed9_Maryann%20Remy.jpeg" alt="Maryann">
+    </div>
+    <div class="img-1-name">
+      <p>Maryann</p>
+    </div>
+    <div class="img-1-desc">
+      <p>Onboarding &amp; Activation</p>
+    </div>
+    <div class="img-2">
+      <img class="img2"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/6035eb0b60071311f4237d84_Nathan-Fiedler-colour.jpeg" alt="Nathan" >
+    </div>
+    <div class="img-2-name">
+      <p>Nathan</p>
+    </div>
+    <div class="img-2-desc">
+      <p>Customer Success</p>
+    </div>
+    <div class="img-3">
+      <img class="img3" src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f31bb9d1851807c6ebf4380_lisa.jpeg" alt="Lisa">
+    </div>
+    <div class="img-3-name">
+      <p>Lisa</p>
+    </div>
+    <div class="img-3-desc">
+      <p>Customer Success</p>
+    </div>
+    <div class="img-4">
+      <img class="img4" src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f31bc2a29b51209143280b3_christian.png" alt="Christian">
+    </div>
+    <div class="img-4-name">
+      <p>Christian</p>
+    </div>
+    <div class="img-4-desc">
+      <p>Sales Engineering</p>
+    </div>
+    <div class="img-5">
+      <img class="img5" src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f31bc6adbb5b3705a75b80b_jaya.jpeg" alt="Jay"  >
+    </div>
+    <div class="img-5-name">
+      <p>Jay</p>
+    </div>
+    <div class="img-5-desc">
+      <p>Partnerships &amp; Alliances</p>
+    </div>
+    <div class="img-6">
+      <img class="img6" src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f31bb761d10589b73c0cf9a_jith.png" alt="Jithendra">
+    </div>
+    <div class="img-6-name">
+      <p>Jithendra</p>
+    </div>
+    <div class="img-6-desc">
+        <p>Chief Science Officer</p>
+    </div>
+      <video class="vids-2" autoplay loop muted>
+        <source src="vid-2.mp4" type="video/mp4">
+      </video>
+    <div class="trusted-by">
+      <h2 class="trusted-by-text">Trusted By Our Partners</h2>
+    </div>
+    <hr class="line-6" size="5px" width="450px" colour="white">
+    <div class="first-line">
+      <img class="pic-1"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f1b46c2a1c5d99ba0f6ca0a_TELARUS%20LOGO%20WHITE%403x%202.png" alt="telarus" >
+      <img class="pic-2"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/611f6700c6f91faa00167440_Talkdesk_logo-partnerpage.svg" alt="talkdesk" >
+      <img class="pic-3"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f1b46c275c95e5707838444_FIVE9%20LOGO%20WHITE%403x%202.png"alt="five9">
+      <img class="pic-4"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f1b46c2b00bacbce7f9bb4b_TWILIO%20LOGO%20WHITE%403x%202.png" alt="twillo" >
+    </div>
+    <div class="second-line">
+      <img class="pic-5"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f1b46c2ba8e58cff970f6ff_MICROSOFT%20LOGO%20WHITE%403x%202.png" alt="microsoft">
+      <img class="pic-6"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/6017868a26d152ff8aae4f85_LIFESIZE%20LOGO%20WHITE%403x.png"  alt="lifesize">
+      <img class="pic-8"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f1b46c25f8e7719de63ced3_GENESYS%20LOGO%20WHITE%403x%202.png" alt="genesis">
+    </div>
+    <div class="third-line">
+      <img class="pic-9"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/601786897ad9e27583f20634_UJET%20LOGO%20WHITE%403x.png" alt="UJet">
+      <img class="pic-10"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5f4fbd65c75b293096427f02_3CLOGIC-LOGO-WHITE%403x.png" alt="3clogic" >
+      <img class="pic-11"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5ffd4cc9e3ab615cb58b98a6_HCL%20LOGO%20WHITE%403x.png" alt="HCL">
+      <img class="pic-12"src="https://global-uploads.webflow.com/5caac3a8d636b7cfc2606d35/5ffd4cc93fd40a40116a9a2c_INTELISYS%20LOGO%20WHITE%403x.png" alt="Intelisys">
+    </div>
+    <div class="enable">
+      <p class="enable-text">Enable Agents with the Power of Contact Center AI</p>
+    </div>
+    <hr class="line-7" size="5px" width="650px" colour="white">
+    <button class="demo-1" type="button">GET A DEMO</button>
+    <h3 class="disclaimer">I could only make</h3><h1 class="desk">Desktop Version.</h1>
+  </body>
+</html>
